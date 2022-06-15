@@ -505,6 +505,11 @@ header .container {
   cursor: pointer;
 }
 
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  color: var(--button-hover-color);
+}
+
 .modal-title {
   font-weight: 700;
   font-size: 20px;
@@ -532,7 +537,14 @@ header .container {
 .form-field {
   display: flex;
   flex-direction: column;
-  margin-bottom: 28px;
+}
+
+.form-field:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+
+.form-field:last-of-type {
+  margin-bottom: 20px;
 }
 
 .form-input-group {
@@ -580,6 +592,7 @@ header .container {
   font-size: 14px;
   line-height: 1.71;
   color: var(--primary-text-color);
+  margin-top: 20px;
 }
 
 .checkbox-link {
@@ -603,6 +616,14 @@ header .container {
   letter-spacing: 0.06em;
   border: 0;
   margin-top: 30px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  background-color: var(--button-hover-color);
 }
 
 .checkbox {
@@ -616,11 +637,23 @@ header .container {
   overflow: hidden;
 }
 
+.icon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-right: 7px;
+
+  border: 2px solid var(--title-text-color);
+  border-radius: 2px;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .checkbox:checked + .icon {
   transform: scale(1.2);
-  border-color: transparent;
-  background-color: orange;
-  background-image: url("../images/check-svg");
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  background-image: url("../images/icons.svg#icon-check");
   background-size: contain;
   background-origin: border-box;
 }
@@ -752,7 +785,6 @@ footer .container {
 .footer-input:hover,
 .footer-input:focus {
   border-color: var(--accent-color);
-  box-shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 }
 
 .footer-btn {
