@@ -601,6 +601,10 @@ header .container {
   cursor: pointer;
 }
 
+.form-textarea:focus {
+  border-color: var(--accent-color);
+}
+
 .form-textarea::placeholder {
   color: var(--form-field-text-color);
 }
